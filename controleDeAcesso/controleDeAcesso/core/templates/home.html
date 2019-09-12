@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    <div class="splash">
+        <div class="pure-g-r">
+            <div class="pure-u-1">
+                <div class="l-box splash-text">
+                    <h1 class="splash-head">
+                        Controle de Acesso com Machine Learning.
+                    </h1>
+                    <h2 class="splash-subhead">
+                        Machine Learning traz a combinação de velocidade com segurança.
+                        <br>
+                        Chega de sofrer com a digital tendo que passar o dedo ínumeras vezes no leitor.
+                    </h2>
+                    <p>
+                        <!-- <a href="#" class="pure-button primary-button">Saiba mais</a> -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="pure-g-r content-ribbon">
+            <div class="pure-u-2-3">
+                <div class="l-box">
+                    <h4 class="content-subhead">Controle de Acesso</h4>
+                    <p class="gray">
+                        O termo controle de acesso é uma referência à prática de permitir o acesso a uma propriedade, prédio, ou sala,
+                        apenas para pessoas autorizadas. <br/>O controle físico de acesso pode ser obtido através de pessoas (um guarda, segurança ou recepcionista),
+                        através de meios mecânicos como fechaduras e chaves, ou através de outros meios tecnológicos, como sistemas baseados em cartões de acesso.
+                    </p>
+                </div>
+            </div>
+            <div class="pure-u-1-3">
+                <div class="l-box">
+                    <img src="{% static 'img/software-controle-acesso-02.jpg' %}"
+                         alt="Controle de Acesso com cartões.">
+                </div>
+            </div>
+        </div>
+        <div class="pure-g-r content-ribbon">
+            <div class="pure-u-1-3">
+                <div class="l-box">
+                    <img src="{% static 'img/home-machine-learning.jpg' %}"
+                         alt="Machine Learning">
+                </div>
+            </div>
+            <div class="pure-u-2-3">
+                <div class="l-box">
+                    <h4 class="content-subhead">Machine Learning</h4>
+                    <p>
+                        Aprendizagem de Máquina, mais conhecido Machine Learning, é um subcampo da Engenharia e da ciência da computação que
+                        evoluiu do estudo de reconhecimento de padrões e da teoria do aprendizado computacional em inteligência artificial.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="pure-g-r content-ribbon">
+    <div class="pure-u-1">
+        <div class="l-box">
+            <h4 class="content-subhead">Listagem de Usuários de usuarios cadastrados na plataforma</h4>
+        </div>
+    </div>
+</div>
+{% for usuario in usuarios %}
+<div class="pure-g-r content-ribbon">
+    <div class="pure-ul" style="margin-top: 10px;">
+        <ul>
+            <hr class="pure-hr"/>
+            <li><img src="{% static 'ia/dlib.jpeg' %}"></li>
+            <li><h4><a href="{{ course.get_absolute_url }}" title="">{{ usuario.name }}</a></h4></li>
+        </ul>
+        {{ usuario.description|linebreaks }}
+    </div>
+</div>
+{% empty %}
+<div class="pure-g-r content-ribbon">
+    <div class="pure-u-1">
+        <div class="l-box">
+            <p>Nenhum usuário cadastrado na plataforma</p>
+        </div>
+    </div>
+</div>
+{% endfor %}
+<div class="pure-g-r content-ribbon">
+    <hr class="pure-hr" style="margin-left: 30px;"/>
+    <div class="pure-u-1">
+        <div class="l-box">
+            <p><a href="{% url 'usuarios:cadastro' %}" title="">Cadastre um novo usuário</a></p>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

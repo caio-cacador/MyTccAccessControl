@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="pure-g-r content-ribbon">
+    <div class="pure-u-1">
+        <div class="l-box">
+            <h4 class="content-subhead">Histórico</h4>
+            <h2>Abaixo o histórico dos usuários</h2>
+        </div>
+    </div>
+</div>
+{% for hist in historico %}
+<div class="pure-g-r content-ribbon">
+
+    <div class="ul-pure-img">
+        <ul>
+            <hr/>
+            <li><h4><a href="{{ hist.get_absolute_url }}" title="">{{ hist.usuario }}</a></h4></li>
+            <li><h4><a href="{{ hist.get_absolute_url }}" title="">{{ hist.time }}</a></h4></li>
+
+        </ul>
+        {{ usuario.description|linebreaks }}
+    </div>
+</div>
+{% empty %}
+<div class="pure-g-r content-ribbon">
+    <div class="pure-u-1">
+        <div class="l-box">
+            <p>Nenhum usuário cadastrado na plataforma</p>
+        </div>
+    </div>
+</div>
+{% endfor %}
+<div class="pure-g-r content-ribbon">
+    <div class="pure-u-1">
+        <div class="l-box">
+            <p>
+                Cadastre novo usuário <a href="{% url 'usuarios:cadastro' %}" title="">Cadastrar</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

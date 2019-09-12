@@ -1,0 +1,17 @@
+<div class="pure-g-r content-ribbon">
+    <div class="pure-u-1">
+        <h2>Usuários:</h2>
+            <fieldset>
+                {% for user in users %}
+                    <div class="pure-control-group">
+                        {{ user.name }}
+                    </div>
+                {% endfor %}
+                <div class="pure-controls">
+                    <p>
+                        <a href="{% url 'core:register' %}" class="pure-button primary-button">Cadastrar Novo Usuário</a>
+                    </p>
+                </div>
+            </fieldset>
+    </div>
+</div>
