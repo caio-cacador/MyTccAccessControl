@@ -1,7 +1,6 @@
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    font-family: sans-serif;
+    text-decoration: none;
 }
 body {
     margin: 0 auto;
@@ -54,6 +53,21 @@ a {
     border-bottom: none;
     z-index: 4;
 }
+.pure-menu.pure-menu-open.pure-menu-horizontal {
+    padding-left: 20px;
+    height: 30px;
+    font-weight: 200;margin
+}
+.pure-menu.pure-menu-open.pure-menu-horizontal ul{
+    margin: 0;
+    padding: 0;
+}
+.pure-menu.pure-menu-open.pure-menu-horizontal li{
+    display: inline;
+    text-transform: uppercase;
+    padding-right: 25px;
+    vertical-align: middle;
+}
 .home-menu .pure-menu-heading {
     color: white;
     font-weight: 400;
@@ -105,6 +119,10 @@ body .primary-button {
 }
 .content .content-ribbon {
     margin: 1.5em 3em;
+    display: inline-flex;
+}
+.content .content-ribbon img{
+    max-width: 400px;
 }
 .ribbon {
     background: #eee;
@@ -150,6 +168,9 @@ form.pure-form-aligned ul.errorlist li {
     width: 100%;
     max-width: 350px;
     margin-bottom: 0.3em;
+    border-radius: 6px;
+    line-height: 25px;
+    padding-left: 10px;
 }
 .pure-form textarea {
     max-width: 450px;
@@ -164,11 +185,11 @@ form.pure-form-aligned ul.errorlist li {
     border-radius: 5px;
 }
 
-a.pure-button-primary {
-    background: white;
-    color: #1f8dd6;
+.pure-button-primary {
+    background: #1f8dd6;
+    color: white;
     border-radius: 5px;
-    font-size: 120%;
+    font-size: 100%;
 }
 .inner {
     padding: 0em 1em;
@@ -196,8 +217,10 @@ ul.breadcrumb li a {
     margin: 0;
     list-style: none;
     padding-left: 30px;
+    padding-right: 30px;
 }
 .pure-ul li{
+    margin-top: 15px;
     max-height: 400;
     display: inline-block;
     vertical-align: middle;
@@ -205,8 +228,6 @@ ul.breadcrumb li a {
 }
 .pure-hr{
     width: 100%;
-    overflow: hidden;
-    margin-top: -35px;
     height: 2px;
     background-color: #e0e0e0;
     border-radius: 30%;
@@ -217,7 +238,6 @@ ul.breadcrumb li a {
 }
 .pure-ul a{
     margin-left: 40px;
-    text-decoration: none;
     text-transform: capitalize;
     color: #6a696b;
     font-size: 22px;
@@ -228,4 +248,37 @@ ul.breadcrumb li a {
     height: 450px;
     margin-left: 25%;
     margin-right: 25%;
+    margin-top: -30px;
+    margin-bottom: 30px;
+}
+
+.cadastro-imagens{
+    display: inline-flex;
+}
+.cadastro-imagens ul{
+    list-style: none;
+    /* display: inline; */
+}
+
+.button {
+  display: inline-block;
+  padding: 8px 50px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  background: #02a6eb;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px #999;
+}
+
+.button:hover {background-color: #086085}
+
+.button:active {
+  background-color: #086085;
+  box-shadow: 0 5px #666;
+  transform: translateY(3px);
 }

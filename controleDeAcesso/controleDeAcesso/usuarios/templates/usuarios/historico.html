@@ -6,13 +6,12 @@
 <div class="pure-g-r content-ribbon">
     <div class="pure-u-1">
         <div class="l-box">
-            <h4 class="content-subhead">Histórico</h4>
-            <h2>Abaixo o histórico dos usuários</h2>
+            <h4 class="content-subhead">Histórico dos Usuários</h4>
         </div>
     </div>
 </div>
 {% for hist in historico %}
-<div class="pure-g-r content-ribbon">
+<div class="pure-g-r">
 
     <div class="ul-pure-img">
         <ul>
@@ -25,15 +24,15 @@
     </div>
 </div>
 {% empty %}
-<div class="pure-g-r content-ribbon">
+<div class="pure-g-r">
     <div class="pure-u-1">
         <div class="l-box">
-            <p>Nenhum usuário cadastrado na plataforma</p>
+            <p style="text-align: center;">Nenhum usuário cadastrado na plataforma</p>
         </div>
     </div>
 </div>
 {% endfor %}
-<div class="pure-g-r content-ribbon">
+<!-- <div class="pure-g-r content-ribbon">
     <div class="pure-u-1">
         <div class="l-box">
             <p>
@@ -41,7 +40,7 @@
             </p>
         </div>
     </div>
-</div>
+</div> -->
 
 
 {% endblock %}

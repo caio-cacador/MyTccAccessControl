@@ -1,16 +1,12 @@
-var player = document.getElementById('player');
+var img_original = document.getElementById('img_original');
 var snapshotCanvas = document.getElementById('snapshot');
 var captureButton = document.getElementById('capture');
 
-var handleSuccess = function(stream) {
-  // Attach the video stream to the video element and autoplay.
-  player.srcObject = stream;
-};
 
 captureButton.addEventListener('click', function() {
   var context = snapshot.getContext('2d');
   // Draw the video frame to the canvas.
-  context.drawImage(player, 0, 0, snapshotCanvas.width,
+  context.drawImage(img_original, 0, 0, snapshotCanvas.width,
       snapshotCanvas.height);
 
   var imgBse64 = snapshotCanvas.toDataURL("image/jpeg");
@@ -22,8 +18,4 @@ captureButton.addEventListener('click', function() {
   var wrapper = document.querySelector('.fotos')
   wrapper.appendChild(image)
 
-  //var arr = document.querySelectorAll('.fotos img')
 });
-
-navigator.mediaDevices.getUserMedia({video: true})
-    .then(handleSuccess);

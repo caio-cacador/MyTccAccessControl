@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block content %}
+
 <div class="pure-g-r content-ribbon">
     <div class="pure-u-1">
         <h2>Informe os dados do usuário</h2>
-        <form class="pure-form pure-form-stacked" method="post">
+        <form class="pure-form" method="post">
             {% csrf_token %}
-            <fieldset>
                 {{ form.non_field_errors }}
 
                 {% for field in form %}
@@ -17,11 +19,31 @@
                 </div>
                 {% endfor %}
 
-                <div class="pure-controls">
-                    <button type="submit" class="pure-button pure-button-primary">Cadastrar</button>
+                <button type="button" id="capture" class="button">Capturar Foto</button>
+
+                <div class="cadastro-imagens">
+
+
+                  <img id="img_original" src="{% static 'ia/dlib.jpeg' %}"></img>
+                  <canvas id="snapshot" width=400 height=300 style="display:none;"></canvas>
+                  <section class="fotos"></section>
+                  <script type="text/javascript" src="{% static 'js/webcam.js' %}"></script>
+
+
+
+<!--
+                    <ul id="imagens">
+                        <li>asdasdasda</li>
+                        <li>awdeadwa wdawd</li>
+                        <li>assdgfsdf sdfsdf</li>
+                    </ul> -->
                 </div>
-            </fieldset>
+
+                <div style="margin-top: 30px;">
+                    <button type="submit" class="button">Cadastrar</button>
+                </div>
         </form>
     </div>
 </div>
+<script type="text/javascript" src="{% static 'js/webcam.js' %}"></script>
 {% endblock %}

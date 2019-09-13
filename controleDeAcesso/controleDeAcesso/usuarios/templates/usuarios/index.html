@@ -6,12 +6,12 @@
 <div class="pure-g-r content-ribbon">
     <div class="pure-u-1">
         <div class="l-box">
-            <h4 class="content-subhead">Listagem de Usuários de usuarios cadastrados na plataforma</h4>
+            <h4 class="content-subhead" style="border-bottom:0;">Listagem de Usuários de usuarios cadastrados na plataforma</h4>
         </div>
     </div>
 </div>
 {% for usuario in usuarios %}
-<div class="pure-g-r content-ribbon">
+<div class="pure-g-r">
     <div class="pure-ul" style="margin-top: 10px;">
         <ul>
             <hr class="pure-hr"/>
@@ -25,15 +25,15 @@
 <div class="pure-g-r content-ribbon">
     <div class="pure-u-1">
         <div class="l-box">
-            <p>Nenhum usuário cadastrado na plataforma</p>
+            <p style="text-align: center;">Nenhum usuário cadastrado na plataforma</p>
         </div>
     </div>
 </div>
 {% endfor %}
-<div class="pure-g-r content-ribbon">
-    <hr class="pure-hr" style="margin-left: 30px;"/>
+<div class="pure-g-r">
+    <hr class="pure-hr" style="margin-left: 30px; width:95%;"/>
     <div class="pure-u-1">
-        <div class="l-box">
+        <div class="l-box" style="margin-left: 60px">
             <p><a href="{% url 'usuarios:cadastro' %}" title="">Cadastre um novo usuário</a></p>
         </div>
     </div>
