@@ -17,48 +17,51 @@ def create_connection(db_file):
     return conn
 
 
-def select_task_by_priority(conn, priority):
+def select(conn, sql):
     """
     Query tasks by priority
     :param conn: the Connection object
-    :param priority:
-    :return:
+    :param sql:
+    :return: sql result
     """
-    cur = conn.cursor()
-    cur.execute("SELECT * FROM tasks WHERE priority=?", (priority,))
-
-    rows = cur.fetchall()
-
-    for row in rows:
-        print(row)
-
-
-def select_all_tasks(conn):
-    """
-    Query all rows in the tasks table
-    :param conn: the Connection object
-    :return:
-    """
-    cur = conn.cursor()
-    cur.execute("SELECT * FROM usuarios_usuariosmodel")
-
-    rows = cur.fetchall()
-
-    for row in rows:
-        print(row)
-
-
-def create_task(conn):
-    """
-    Create a new task
-    :param conn:
-    :return:
-    """
-
-    sql = ''' SELECT * FROM usuarios_usuariosmodel '''
     cur = conn.cursor()
     cur.execute(sql)
+
+    rows = cur.fetchall()
+
+    for row in rows:
+        print(row)
+
+
+def insert(conn, sql):
+    """
+    Insert into table
+    :param conn:
+    :param sql:
+    :return: project id
+    """
+    # sql = ''' INSERT INTO projects(name,begin_date,end_date)
+    #           VALUES(?,?,?) '''
+    cur = conn.cursor()
+    cur.execute(conn, sql)
     return cur.lastrowid
+
+
+def update(conn, sql):
+    """
+    update priority, begin_date, and end date of a task
+    :param conn:
+    :param sql:
+    :return: project id
+    """
+    # sql = ''' UPDATE tasks
+    #           SET priority = ? ,
+    #               begin_date = ? ,
+    #               end_date = ?
+    #           WHERE id = ?'''
+    cur = conn.cursor()
+    cur.execute(conn, sql)
+    conn.commit()
 
 
 def main():
@@ -67,17 +70,9 @@ def main():
     # create a database connection
     conn = create_connection(database)
     with conn:
-        # create a new project
-        # project = ('Cool App with SQLite & Python', '2015-01-01', '2015-01-30');
-        # project_id = create_project(conn, project)
 
-        # tasks
-        # task_1 = ('Analyze the requirements of the app', 1, 1, project_id, '2015-01-01', '2015-01-02')
-        # task_2 = ('Confirm with user about the top requirements', 1, 1, project_id, '2015-01-03', '2015-01-05')
-
-        # create tasks
-        print(select_all_tasks(conn))
-        # create_task(conn, task_2)
+        print(insert(conn, ''))
+        print(select(conn, 'SELECT * FROM usuarios_usuariosmodel'))
 
 
 if __name__ == '__main__':
