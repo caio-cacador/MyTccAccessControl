@@ -3,47 +3,43 @@
 {% load static %}
 
 {% block content %}
+<form class="pure-form" method="post">
 
-<div class="pure-g-r content-ribbon">
-    <div class="pure-u-1">
-        <h2>Informe os dados do usuário</h2>
-        <form class="pure-form" method="post">
-            {% csrf_token %}
-                {{ form.non_field_errors }}
+<div class="pure-block">
+    <div class="pure-1-2">
+        {% csrf_token %}
+        <div class="page-horizontal-aligned">
+            <h2>Informe os dados do usuário</h2>
 
-                {% for field in form %}
-                <div class="pure-control-group">
-                    {{ field.label_tag }}
-                    {{ field }}
-                    {{ field.errors }}
+            {{ form.non_field_errors }}
+
+            {% for field in form %}
+            <div class="pure-control-group">
+                <div class="fields">
+                  {{ field.label_tag }}
+                  {{ field }}
+                  {{ field.errors }}
                 </div>
-                {% endfor %}
+            </div>
+            {% endfor %}
+                <button type="button" id="capture" class="button" style="margin-bottom: 3mm;">Capturar Foto</button>
 
-                <button type="button" id="capture" class="button">Capturar Foto</button>
-
-                <div class="cadastro-imagens">
-
-
-                  <img id="img_original" src="{% static 'ia/dlib.jpeg' %}"></img>
-                  <canvas id="snapshot" width=400 height=300 style="display:none;"></canvas>
-                  <section class="fotos"></section>
-                  <script type="text/javascript" src="{% static 'js/webcam.js' %}"></script>
-
-
-
-<!--
-                    <ul id="imagens">
-                        <li>asdasdasda</li>
-                        <li>awdeadwa wdawd</li>
-                        <li>assdgfsdf sdfsdf</li>
-                    </ul> -->
+                <div class="cadastro-usuario">
+                    <img id="img_original" src="{% static 'ia/dlib.jpeg' %}"/>
+                    <canvas id="snapshot" width=400 height=300 style="display:none;"/>
                 </div>
-
-                <div style="margin-top: 30px;">
-                    <button type="submit" class="button">Cadastrar</button>
-                </div>
-        </form>
+            <div style="margin-top: 30px;">
+                <button type="submit" class="button align-bottom">Cadastrar</button>
+            </div>
+        </div>
+    </div>
+    <div class="vertical-hr-right"> </div>
+    <div class="pure-2-2">
+        <div class="section-fotos">
+            <section class="fotos"/>
+        </div>
     </div>
 </div>
+</form>
 <script type="text/javascript" src="{% static 'js/webcam.js' %}"></script>
 {% endblock %}

@@ -156,6 +156,9 @@ ul.errorlist li {
 form.pure-form-aligned ul.errorlist li {
     padding-left: 11.5em;
 }
+.pure{
+    margin: 6mm;
+}
 .pure-form label {
     margin: 1em 0 0;
     font-weight: bold;
@@ -260,6 +263,37 @@ ul.breadcrumb li a {
     /* display: inline; */
 }
 
+.cadastro-usuario {
+}
+
+.section-fotos img{
+    padding: 15px;
+    width: 280px;
+    height: 200px;
+}
+
+.page-horizontal-aligned{
+    text-align: center;
+}
+.pure-block{
+    display: flex;
+    margin: 1cm;
+}
+.pure-1-2{
+    margin-right: 6mm;
+}
+.pure-2-2{
+    margin-left: 1mm;
+}
+.vertical-hr-right {
+    margin-left: 3mm;
+    border-left: 2mm solid;
+    border-color: #e0e0e0;
+    padding-left: 8mm;
+    padding-right: 8mm;
+    border-radius: 40%;
+}
+
 .button {
   display: inline-block;
   padding: 8px 50px;
@@ -281,4 +315,8 @@ ul.breadcrumb li a {
   background-color: #086085;
   box-shadow: 0 5px #666;
   transform: translateY(3px);
+}
+
+.button.align-bottom {
+    vertical-align: bottom;
 }
